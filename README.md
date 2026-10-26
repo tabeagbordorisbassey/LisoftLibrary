@@ -1,2 +1,52 @@
 # LisoftLibrary
 My Lisoft Library project
+
+A beginner-friendly Java library-management project demonstrating OOP, collections, exceptions, and Java 8+ functional features. The code uses Java 8-compatible syntax and can run on Java 8 through Java 21+.
+
+## Architecture
+
+- `core/model`: domain objects, abstraction, inheritance, encapsulation, polymorphism
+- `core/storage`: collection-backed storage and lookup
+- `core/service`: business rules and stream-based operations
+- `core/exception`: custom exceptions
+- `core/common`: reusable search contract
+- `Main.java`: runnable demonstration
+
+## Requirements
+
+- JDK 8 or later (`java -version`, `javac -version`)
+
+## Compile from the project root
+
+Linux/macOS:
+
+```bash
+mkdir -p bin
+javac -d bin $(find src -name "*.java")
+```
+
+## Run
+
+```bash
+java -cp bin Main
+```
+
+## Concepts demonstrated
+
+1. **Encapsulation:** private fields; constructors, getters and controlled setters.
+2. **Abstraction:** `LibraryItem` abstract class and `Searchable<T>` interface.
+3. **Inheritance:** `Book` and `EBook` extend `LibraryItem`; `StudentMember` extends `Member`.
+4. **Polymorphism:** overridden `getDescription()` and overloaded `searchBooks(...)`.
+5. **Collections:** `List`, `Map`, `Set`.
+6. **Exceptions:** custom exceptions for missing books, duplicates and invalid borrowing.
+7. **Lambdas and streams:** `filter`, `map`, `collect`.
+8. **Optional:** safe representation of a search that may not find a book.
+
+## Note on Optional
+
+`Optional` helps make absence explicit, but it does not automatically eliminate every `NullPointerException`. Validate inputs and avoid returning or passing `null` where possible.
+
+## Future improvements
+
+Add unit tests, persistence (file/database), a user interface, and a Java 21-specific branch using records or switch expressions if desired.
+>>>>>>> 3c34358 (update Lisoft Library Java project)
